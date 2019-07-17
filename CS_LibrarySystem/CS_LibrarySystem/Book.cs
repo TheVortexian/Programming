@@ -3,9 +3,6 @@ namespace CS_LibrarySystem
 {
     public class Book
     {
-        private string name;
-        private int pages;
-        bool checkedOut;
 
         public Book(string name, int pages)
         {
@@ -14,21 +11,8 @@ namespace CS_LibrarySystem
             this.checkedOut = false;
         }
 
-        public string getName()
-        {
-            return this.name;
-        }
-        public int getPages()
-        {
-            return this.pages;
-        }
-        public bool isCheckedOut()
-        {
-            return this.checkedOut;
-        }
-        public void setCheckedOut(bool b)
-        {
-            this.checkedOut = b;
-        }
+        public string name { get; set; }
+        public int pages { get; set; }
+        public bool checkedOut { get; set; }
     }
 }

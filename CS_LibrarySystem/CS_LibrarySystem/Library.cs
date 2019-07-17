@@ -60,7 +60,7 @@ namespace CS_LibrarySystem
             {
                 int trueIndex = index - 1;
                 Book selectedBook = this.Books[trueIndex];
-                Console.WriteLine(selectedBook.getName());
+                Console.WriteLine(selectedBook.name);
             } catch (ArgumentOutOfRangeException e)
             {
                 Console.WriteLine("Out of range, max range is " + (this.Books.Count));
@@ -75,9 +75,9 @@ namespace CS_LibrarySystem
                 int trueIndex = index - 1;
                 Book selectedBook = this.Books[trueIndex];
                 this.Books.RemoveAt(trueIndex); // remove the checked out book from available book list
-                Console.WriteLine("Checking out '" + selectedBook.getName() + "'");
+                Console.WriteLine("Checking out '" + selectedBook.name + "'");
                 this.CheckedOut.Add(selectedBook);
-                selectedBook.setCheckedOut(true);
+                selectedBook.checkedOut = true;
             } catch (ArgumentOutOfRangeException e)
             {
                 Console.WriteLine("Out of range, max range is " + (this.Books.Count));
@@ -92,9 +92,9 @@ namespace CS_LibrarySystem
                 int trueIndex = index - 1;
                 Book selectedBook = this.CheckedOut[trueIndex];
                 this.CheckedOut.RemoveAt(trueIndex);
-                Console.WriteLine("Returning '" + selectedBook.getName() + "'");
+                Console.WriteLine("Returning '" + selectedBook.name + "'");
                 this.Books.Add(selectedBook);
-                selectedBook.setCheckedOut(false);
+                selectedBook.checkedOut = false;
             } catch (ArgumentOutOfRangeException e)
             {
                 Console.WriteLine("Out of range, max range is " + (this.CheckedOut.Count));
@@ -108,7 +108,7 @@ namespace CS_LibrarySystem
             {
                 foreach (Book b in CheckedOut)
                 {
-                    Console.WriteLine("Own '" + b.getName() + "'");
+                    Console.WriteLine("Own '" + b.name + "'");
                 }
             } else
             {
