@@ -104,10 +104,15 @@ namespace CS_LibrarySystem
         // displays checked out books
         public void showCheckedOutBooks()
         {
-            for (int i = 0; i < (this.CheckedOut.Count-1); i++)
+            if (CheckedOut.Count > 0)
             {
-                Book b = CheckedOut[i];
-                Console.WriteLine("Owned: " + b.getName() + " with index " + (i+1));
+                foreach (Book b in CheckedOut)
+                {
+                    Console.WriteLine("Own '" + b.getName() + "'");
+                }
+            } else
+            {
+                Console.WriteLine("You don't have any books!");
             }
         }
     }
