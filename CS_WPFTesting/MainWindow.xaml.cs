@@ -24,5 +24,10 @@ namespace CS_WPFTesting
         {
             InitializeComponent();
         }
+
+        private void Hello_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("hello, world!");
+        }
     }
 }
