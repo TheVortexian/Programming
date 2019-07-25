@@ -10,7 +10,107 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
-        <Button Click="Hello_Click" Content="Click me to&#xD;&#xA;do something&#xD;&#xA;cool!" HorizontalAlignment="Left" Height="57" Margin="11,10,-129.2,0" VerticalAlignment="Top" Width="119"/>
+        <Button Click="C1" Content="1" HorizontalAlignment="Left" Height="32" Margin="11,10,-52.4,0" VerticalAlignment="Top" Width="43" RenderTransformOrigin="0.5,0.5">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.049"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button Click="C2" Content="2" HorizontalAlignment="Left" Height="32" Margin="66,10,-105.8,0" VerticalAlignment="Top" Width="43" RenderTransformOrigin="0.5,0.5">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.049"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button Click="C3" Content="3" HorizontalAlignment="Left" Height="32" Margin="121,10,-154.4,0" VerticalAlignment="Top" Width="43" RenderTransformOrigin="0.5,0.5">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.049"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button Click="C4" Content="4" HorizontalAlignment="Left" Height="32" Margin="11,53,-41.2,0" VerticalAlignment="Top" Width="43" RenderTransformOrigin="0.5,0.5">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.049"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button Click="C5" Content="5" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="43" RenderTransformOrigin="0.5,0.5" Margin="66,53,-58.6,0">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.049"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button Click="C6" Content="6" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="43" RenderTransformOrigin="0.5,0.5" Margin="121,53,-109.6,0">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.049"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button Click="C7" Content="7" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="43" RenderTransformOrigin="0.5,0.5" Margin="12,94,0,0">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.049"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button Click="C8" Content="8" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="43" RenderTransformOrigin="0.5,0.5" Margin="66,95,-50.6,0">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.049"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button Click="C9" Content="9" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="43" RenderTransformOrigin="0.5,0.5" Margin="121,95,-100.8,0">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.049"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button Click="C0" Content="0" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="43" RenderTransformOrigin="0.5,0.5" Margin="66,135,-43.4,0">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.049"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button Click="SHOWNUM" Content="Show Number" HorizontalAlignment="Left" Height="35" Margin="42,189,-80.6,0" VerticalAlignment="Top" Width="105"/>
 
     </Grid>
 </Window>
