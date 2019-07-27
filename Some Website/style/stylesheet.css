@@ -13,6 +13,7 @@ h2 {
 }
 
 #userDropdown {
+    text-align: center;
     visibility: hidden;
     width: 60%;
     border: solid black;
