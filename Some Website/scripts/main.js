@@ -1,6 +1,5 @@
 function newUser() {
     var userTable = document.getElementById("userDropdown");
-    document.getElementById("newUserInformation").style.visibility = "visible";
     userTable.style.visibility = "visible";
     var rows = userTable.getElementsByTagName("tr").length;
     
