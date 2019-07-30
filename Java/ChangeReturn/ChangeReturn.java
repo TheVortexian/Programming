@@ -73,7 +73,10 @@ public class ChangeReturn {
             totalChange -= .01;
          }
 
-         return("Total change: " + String.format("%.2f",(given-cost)) + "\nQuarters: " + quarters + "\nDimes: " + dimes + "\nNickels: " + nickels + "\nPennies: " + pennies);
+         return("Total change: " + 
+               String.format("%.2f",(given-cost)) + "\nHundreds: " + hundreds + "\nFifties: " + fifties + 
+               "\nTwenties: " + twenties + "\nTens: " + tens + "\nFives: " + fives + "\nOnes: " + ones +
+               "\nQuarters: " + quarters + "\nDimes: " + dimes + "\nNickels: " + nickels + "\nPennies: " + pennies);
       }
       if (totalChange == 0) {
          return("You have no change!");
