@@ -10,11 +10,13 @@ public int PLANETVIEW = 3;
 
 ArrayList<Planet> planets = new ArrayList<Planet>();
 final int MAX_PLANETS = 100;
+Player p;
 void setup() {
   size(displayWidth, displayHeight); // dWidth and height are deprecated, not sure why
   for (int i = 0; i < MAX_PLANETS; i++) {
     planets.add(new Planet(random(width), random(height)));
   }
+  p = new Player(400, 400);
 }
 
 // do screen drawing here
@@ -23,4 +25,5 @@ void draw() {
   for (Planet p : planets) {
     p.show();
   }
+  p.show();
 }
