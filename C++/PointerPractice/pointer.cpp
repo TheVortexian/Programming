@@ -1,15 +1,22 @@
 #include <iostream>
+#include <cstddef>
+
 using namespace std;
 
-int main() {
+void segfault() {
+   int *p1 = NULL;
+   *p1 = 10;
+}
 
-  int pval = 100;
+void notsegfault(int i) {
+  int pval = i;
   int *paddr = &pval;
 
-  cout << "dereference of pval is " << &pval << endl;
-  cout << "deref of paddr is  " << &paddr << endl;
+  cout << "addr of pval is " << &pval << endl;
+  cout << "addr of paddr is  " << &paddr << endl;
   cout << "value pointed to by paddr is " << *paddr;
+}
 
-  return 0;
-
+int main() {
+   notsegfault(10348);
 }
