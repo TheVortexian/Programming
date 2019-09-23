@@ -1,5 +1,4 @@
 #include <iostream>
-#include <cstddef>
 
 using namespace std;
 
@@ -18,5 +17,6 @@ void notsegfault(int i) {
 }
 
 int main() {
-   notsegfault(10348);
+   segfault();
+   return 0;
 }
