@@ -14,12 +14,12 @@ public class Factorial {
    public static void main(String[] args) {
       //This convolution takes the time the program took to run, and prints it to the file output.txt
       long start = System.nanoTime();
-      final long N = 150000;
+      final long N = 500000;
       BigInteger result = factorial(N);
       long end = System.nanoTime();
       System.out.println("Done! Check directory for .txt file containing results.");
       try {
-      writeFile(("Evaluated " + N + "!, taking " + ((end-start)/(1000000000)) + " seconds and got: "), result.toString());
+      writeFile(("Evaluated " + N + "!, taking " + (double)((end-start)/(1000000000)) + " seconds and got: "), result.toString());
       } catch (Exception e) { System.out.println(e); }
    }
    

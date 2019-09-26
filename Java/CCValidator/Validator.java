@@ -18,10 +18,7 @@ public class Validator {
    }
    
    public static void main(String[] args) {
-      Scanner s = new Scanner(System.in);
-      System.out.println("Enter card #: ");
-      String num = s.next();
-      System.out.println("Is valid? " + checkCard(num));
+      System.out.println(392 / 10 % 10 / 2);
    }
 
 }
