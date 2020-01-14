@@ -14,7 +14,7 @@ public class Factorial {
    public static void main(String[] args) {
       //This convolution takes the time the program took to run, and prints it to the file output.txt
       long start = System.nanoTime();
-      final long N = 500000;
+      final long N = 100000;
       BigInteger result = factorial(N);
       long end = System.nanoTime();
       System.out.println("Done! Check directory for .txt file containing results.");
