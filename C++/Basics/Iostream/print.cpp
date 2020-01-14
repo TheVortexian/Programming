@@ -7,6 +7,9 @@ int main() {
    
    int x = 4;
    std::cout << x << std::endl;
+   std::cout << "Enter a value for x: ";
+   std::cin >> x;
+   std::cout << "You entered " << x;
 
    return 0;
 }
