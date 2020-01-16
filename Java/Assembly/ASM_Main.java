@@ -9,7 +9,7 @@ public class ASM_Main {
       
       ASM_File f = new ASM_File(s.nextLine());
       f.parse();
-      System.out.println(f.getXmmReg("xmm0"));
+      f.print();
    }
 
 }

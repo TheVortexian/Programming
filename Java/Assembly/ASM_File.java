@@ -24,7 +24,6 @@ public class ASM_File {
       } catch (FileNotFoundException e) {
          System.out.println("Could not read file!");
       }
-      System.out.println(programFile);
    }
    
    // puts a generic register / value
@@ -53,7 +52,6 @@ public class ASM_File {
       } else {
          returnable = 0;
       }
-      
       return returnable;
    }
    double getXmmReg(String reg) {
@@ -64,12 +62,11 @@ public class ASM_File {
       } else {
          returnable = 0;
       }
-      
       return returnable;
    }
    
-   void DEBUG_print() {
-      System.out.print(genRegs);
+   void print() {
+      System.out.println(genRegs);
       System.out.println(xmmRegs);
    }
    // checks if register exists 
@@ -90,8 +87,18 @@ public class ASM_File {
       // reg, reg
       if (toMove instanceof String) {
          String reg2 = String.valueOf(toMove);
-         if (!regExists(reg1)) throw new NullPointerException();
-         if (!regExists(reg2)) throw new NullPointerException();
+         if (!regExists(reg1)) {
+            System.out.println("Creating new register " + reg1);
+            if (reg1.contains("r")) {
+               genRegs.put(reg1, 0);
+            } else if (reg1.contains("xmm")) {
+               xmmRegs.put(reg1, 0.0);
+            }
+         }
+         if (!regExists(reg2)) {
+            System.out.println("Second register does not exist!");
+            throw new NullPointerException();
+         }
          else {
             if (reg2.contains("r") && reg1.contains("r")) {
                genRegs.replace(reg1, genRegs.get(reg2));
@@ -103,9 +110,8 @@ public class ASM_File {
             } 
          }
       }
-      
       // reg, val
-      if (toMove instanceof Integer) {
+      else if (toMove instanceof Integer) {
          int tempMov = 0;
          try {
             tempMov = Integer.parseInt(String.valueOf(toMove));
@@ -121,7 +127,6 @@ public class ASM_File {
             }
          } else { System.out.println("Can't move integer into a non-integer register!"); throw new InputMismatchException(); }
       }
-      
       else if (toMove instanceof Double) {
          double tempMov = 0;
          try {
@@ -328,6 +333,10 @@ public class ASM_File {
    // the "parser" for the program file
    protected void parse() {
       for (String s : programFile.values()) {
+         if (s.length() == 0) {
+            System.out.println("Empty string");
+            throw new NullPointerException();
+         }
          String[] line = s.replace(",", "").split(" ");
          String operator = line[0];
          String register = line[1];
@@ -338,7 +347,7 @@ public class ASM_File {
                weirdParse(operator, register, Integer.parseInt(line[2]));
             }
          } else {
-            weirdParse(operator, register, line[2]);
+            weirdParse(operator, register, line[2].trim());
          }
       }
    }
