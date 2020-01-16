@@ -1,1 +1,3 @@
-placeholder.txt
+mov xmm0, 25.5
+mov xmm1, 13.3
+mul xmm0, xmm1
