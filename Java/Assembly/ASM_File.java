@@ -9,7 +9,7 @@ public class ASM_File {
    protected HashMap<String, Integer> genRegs; // generic registers
    protected HashMap<String, Double> xmmRegs; // xmm registers
    protected HashMap<Integer, String> programFile; // holds lines
-   private int lineCount = 0;
+   private int lineCount = 1;
    public ASM_File(String fileName) {
       this.fileName = fileName;
       this.file = new File(fileName);
@@ -334,20 +334,21 @@ public class ASM_File {
    protected void parse() {
       for (String s : programFile.values()) {
          if (s.length() == 0) {
-            System.out.println("Empty string");
-            throw new NullPointerException();
-         }
-         String[] line = s.replace(",", "").split(" ");
-         String operator = line[0];
-         String register = line[1];
-         if (!Character.isLetter(line[2].charAt(0))) {
-            if (line[2].contains(".")) {
-               weirdParse(operator, register, Double.parseDouble(line[2]));
-            } else if (!line[2].contains(".")) {
-               weirdParse(operator, register, Integer.parseInt(line[2]));
-            }
+            System.out.println("Empty string, skipping line");
+            //throw new NullPointerException();
          } else {
-            weirdParse(operator, register, line[2].trim());
+            String[] line = s.replace(",", "").split(" ");
+            String operator = line[0];
+            String register = line[1];
+            if (!Character.isLetter(line[2].charAt(0))) {
+               if (line[2].contains(".")) {
+                  weirdParse(operator, register, Double.parseDouble(line[2]));
+               } else if (!line[2].contains(".")) {
+                  weirdParse(operator, register, Integer.parseInt(line[2]));
+               }
+            } else {
+               weirdParse(operator, register, line[2].trim());
+            }
          }
       }
    }

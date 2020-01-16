@@ -1,6 +1,15 @@
-mov rax, 15
+mov xmm0, 100.0
+mul xmm0, 0.1
+mul xmm0, xmm0
+
+mov rax, -25
 mov rbx, rax
-mov xmm0, 109.73
+mul rbx, 2
+mov rcx, rbx
+
 mov xmm1, xmm0
-mul xmm0, 2
-sub xmm1, xmm0
+mul xmm1, xmm1
+
+push rax
+
+pop rax
