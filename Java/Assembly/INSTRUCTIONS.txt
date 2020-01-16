@@ -1,0 +1,19 @@
+This program will process and run a basic and limited version of "Assembly" code, following the Intel Syntax format.
+Any and all registers are available to you, not just xmm0-7, but xmm0-99999; general purpose (integer) registers MUST
+begin with "r".
+
+5 operands are available:
+   mov register, value
+   -  mov register, register
+   
+   add register, value
+   -  add register, register
+   
+   sub register, value
+   -  sub register, register
+   
+   mul register, value
+   -  mul register, register
+   
+   div register, value
+   -  div register, register
