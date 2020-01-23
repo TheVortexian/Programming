@@ -35,5 +35,5 @@ int main() {
     // put 10 * i+1 inside arrayLooping's elements
     for (int i = 0; i < sizeof(arrayLooping) / sizeof(arrayLooping[0]); i++) {
         arrayLooping[i] = 10*(i+1);
-    }
+    } 
 }
