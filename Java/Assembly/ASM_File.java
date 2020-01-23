@@ -9,7 +9,7 @@ public class ASM_File {
    protected HashMap<String, Integer> genRegs; // generic registers
    protected HashMap<String, Double> xmmRegs; // xmm registers
    protected HashMap<Integer, String> programFile; // holds lines
-   private int lineCount = 1;
+   private int lineCount = 0;
    public ASM_File(String fileName) {
       this.fileName = fileName;
       this.file = new File(fileName);
@@ -332,23 +332,32 @@ public class ASM_File {
    
    // the "parser" for the program file
    protected void parse() {
-      for (String s : programFile.values()) {
-         if (s.length() == 0) {
-            System.out.println("Empty string, skipping line");
+      final String[] vals = (String[])programFile.values().toArray();
+      for (int i = 0; i < vals.length; i++) {
+         if (vals[i].length() == 0) {
+            System.out.println("Empty line");
             //throw new NullPointerException();
-         } else {
-            String[] line = s.replace(",", "").split(" ");
-            String operator = line[0];
-            String register = line[1];
-            if (!Character.isLetter(line[2].charAt(0))) {
-               if (line[2].contains(".")) {
-                  weirdParse(operator, register, Double.parseDouble(line[2]));
-               } else if (!line[2].contains(".")) {
-                  weirdParse(operator, register, Integer.parseInt(line[2]));
-               }
+         }
+         String[] line = vals[i].replace(",", "").split(" ");
+         String operator = line[0];
+         String register = line[1];
+         if (operator.equals("jmp")) {
+            int toGo = Integer.parseInt(register);
+            if (toGo <= vals.length) {
+               i = toGo;
             } else {
-               weirdParse(operator, register, line[2].trim());
+               System.out.println("Cannot jump to nonexistent line!");
+               throw new NullPointerException();
             }
+         }
+         if (!Character.isLetter(line[2].charAt(0))) {
+            if (line[2].contains(".")) {
+               weirdParse(operator, register, Double.parseDouble(line[2]));
+            } else if (!line[2].contains(".")) {
+               weirdParse(operator, register, Integer.parseInt(line[2]));
+            }
+         } else {
+            weirdParse(operator, register, line[2].trim());
          }
       }
    }

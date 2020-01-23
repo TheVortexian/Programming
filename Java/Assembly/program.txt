@@ -1,0 +1,7 @@
+mov rax, 15
+mov rbx, rax
+add rax, rbx
+jmp 7
+mov xmm0, 12.2
+mov xmm1, 13.1
+mul rbx, rax
