@@ -1,6 +1,7 @@
 mov rax, 15
 mov rbx, rax
-mov xmm0, 109.73
-mov xmm1, xmm0
-mul xmm0, 2
-sub xmm1, xmm0
+add rax, rbx
+jmp 7
+mov xmm0, 12.2
+mov xmm1, 13.1
+mul rbx, rax

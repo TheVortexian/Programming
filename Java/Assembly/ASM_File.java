@@ -332,14 +332,24 @@ public class ASM_File {
    
    // the "parser" for the program file
    protected void parse() {
-      for (String s : programFile.values()) {
-         if (s.length() == 0) {
-            System.out.println("Empty string");
-            throw new NullPointerException();
+      final String[] vals = (String[])programFile.values().toArray();
+      for (int i = 0; i < vals.length; i++) {
+         if (vals[i].length() == 0) {
+            System.out.println("Empty line");
+            //throw new NullPointerException();
          }
-         String[] line = s.replace(",", "").split(" ");
+         String[] line = vals[i].replace(",", "").split(" ");
          String operator = line[0];
          String register = line[1];
+         if (operator.equals("jmp")) {
+            int toGo = Integer.parseInt(register);
+            if (toGo <= vals.length) {
+               i = toGo;
+            } else {
+               System.out.println("Cannot jump to nonexistent line!");
+               throw new NullPointerException();
+            }
+         }
          if (!Character.isLetter(line[2].charAt(0))) {
             if (line[2].contains(".")) {
                weirdParse(operator, register, Double.parseDouble(line[2]));
