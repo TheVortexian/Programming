@@ -12,7 +12,14 @@
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
+*./SDL2
 SDL2/
+*./include
+include/
+*./lib
+lib/
+*.dll
+*.lib
 
 # Mono auto generated files
 mono_crash.*
