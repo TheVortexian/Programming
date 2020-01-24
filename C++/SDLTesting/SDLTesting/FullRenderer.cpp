@@ -37,6 +37,8 @@ void FullRenderer::update(double speed = 1) {
 		if (e.type == SDL_QUIT) FullRenderer::exit = true;
 	}
 
+	// check our keyboard for either movement keys or escape key
+	// this method removes the "jittering" of testing for keypressed
 	const Uint8* keystate = SDL_GetKeyboardState(NULL);
 	if (keystate[SDL_SCANCODE_LEFT])
 		FullRenderer::imgX -= speed * .1;

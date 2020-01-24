@@ -17,11 +17,11 @@ private:
 	SDL_Texture* image;
 	SDL_Rect imageRect;
 
-	bool exit = false;
-	double imgX;
+	bool exit = false; // when to exit the application
+	double imgX; // true location of the image
 	double imgY;
 
-	// window background color
+	// window background color (not really necessary)
 	struct colors {
 		int r;
 		int g;
@@ -34,8 +34,8 @@ public:
 
 	SDL_Window* getWindow() { return myWindow; }
 	SDL_Renderer* getRenderer() { return myRenderer; }
-	void showWindow();
+	void showWindow(); // shows the window
 	void setBackgroundColor(int r, int g, int b, int a) { colors = { r, g, b, a }; }
-	void loadImage(char* imgName, int x, int y, double scale = 1.0);
-	void update(double speed);
+	void loadImage(char* imgName, int x, int y, double scale = 1.0); // loads an image
+	void update(double speed); // update application (mostly for keypresses)
 };
