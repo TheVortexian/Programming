@@ -22,6 +22,8 @@ lib/
 *.dll
 *.lib
 *.class
+*.classpath
+*.project
 
 # Mono auto generated files
 mono_crash.*
