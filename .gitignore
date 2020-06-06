@@ -21,6 +21,7 @@ include/
 lib/
 *.dll
 *.lib
+*.class
 
 # Mono auto generated files
 mono_crash.*
