@@ -18,13 +18,11 @@
 SDL2/
 *./include
 include/
-*./lib
-lib/
-*.dll
-*.lib
 *.class
 *.classpath
 *.project
+*.vcxproj
+*.vcxproj.filters
 
 # Mono auto generated files
 mono_crash.*
